@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd Checker</title>
+</head>
+<body>
+    <h1>Enter a Number</h1>
+    <form id="numberForm">
+        <label for="numberInput">Number:</label>
+        <input type="number" id="numberInput" name="numberInput" required>
+        <button type="submit">Check</button>
+    </form>
+
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            const number = document.getElementById('numberInput').value;
+            console.log(number);
+
+            const checkEvenOdd = (num) => {
+                if (isNaN(num)) {
+                    alert("Please enter a valid number");
+                } else if (num % 2 === 0) {
+                    alert(`${num} is even.`);
+                } else {
+                    alert(`${num} is odd.`);
+                }
+            };
+
+            checkEvenOdd(number);
+        });
+    </script>
+</body>
+</html>
